@@ -2,6 +2,7 @@
 
 resource "azuread_application" "cluster_aks" {
   name = var.cluster_name
+  tags = var.tags
 }
 
 resource "azuread_service_principal" "cluster_sp" {
