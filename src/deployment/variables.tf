@@ -64,7 +64,7 @@ variable subnet_cidr {
 
 variable kubernetes_version {
   description = "version of the kubernetes cluster"
-  default     = "1.16.10"
+  default     = "1.17.13"
 }
 
 variable "vm_size" {
