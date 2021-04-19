@@ -4,6 +4,7 @@ resource "azurerm_log_analytics_workspace" "test" {
     location            = var.log_analytics_workspace_location
     resource_group_name = var.resource_group_name
     sku                 = var.log_analytics_workspace_sku
+    tags = var.tags
 }
 
 resource "azurerm_log_analytics_solution" "test" {
@@ -12,6 +13,7 @@ resource "azurerm_log_analytics_solution" "test" {
     resource_group_name   = var.resource_group_name
     workspace_resource_id = azurerm_log_analytics_workspace.test.id
     workspace_name        = azurerm_log_analytics_workspace.test.name
+    tags = var.tags
 
     plan {
         publisher = "Microsoft"
