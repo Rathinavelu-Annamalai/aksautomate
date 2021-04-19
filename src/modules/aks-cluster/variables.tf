@@ -94,6 +94,15 @@ variable "default_pool_type" {
   default     = "VirtualMachineScaleSets"
 }
 
+variable "tags" {
+type = map
+default = {
+  environment = "dev-demo"
+  CreatedBy = "terraform"
+  ModeOfDeployment = "Automation"
+}
+}
+
 
 
 
