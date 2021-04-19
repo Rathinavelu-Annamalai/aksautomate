@@ -95,15 +95,4 @@ default = {
   CreatedBy = "terraform"
   ModeOfDeployment = "Automation"
 }
-
-
-
-
-
-
-
-
-
-
-
-
+}
