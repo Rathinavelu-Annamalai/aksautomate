@@ -4,6 +4,7 @@ resource "azurerm_kubernetes_cluster" "cluster" {
   resource_group_name = var.resource_group_name
   dns_prefix          = var.dns_prefix
   kubernetes_version  = var.kubernetes_version
+  tags = var.tags
 
   default_node_pool {
     name            = var.default_pool_name
@@ -17,15 +18,6 @@ resource "azurerm_kubernetes_cluster" "cluster" {
     enable_auto_scaling = true
     min_count           = var.min_count
     max_count           = var.max_count
-
-    tags = merge(
-    {
-       "environment" = "runitoncloud"
-    },
-    {
-      "aadssh" = "True"
-    },
-  )
   }
 
 
@@ -56,7 +48,7 @@ resource "azurerm_monitor_diagnostic_setting" "aks_cluster" {
   name                       = "${azurerm_kubernetes_cluster.cluster.name}-audit"
   target_resource_id         = azurerm_kubernetes_cluster.cluster.id
   log_analytics_workspace_id = var.diagnostics_workspace_id
-
+  tags = var.tags
   log {
     category = "kube-apiserver"
     enabled  = true
