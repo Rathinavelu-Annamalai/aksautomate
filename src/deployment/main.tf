@@ -31,7 +31,7 @@ module "aks_identities" {
   source       = "../modules/aks_identities"
   cluster_name = var.cluster_name
   client_id="${module.aks_identities.cluster_client_id}"
-  client_secret="${module.aks_identities.client_secret}"
+  client_secret="${module.aks_identities.cluster_sp_secret}"
 }
 
 # AKS Log Analytics
