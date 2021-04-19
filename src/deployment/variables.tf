@@ -1,6 +1,12 @@
-variable "client_id" {}
+variable "client_id" {
+  description = "kubernetes internal service cidr range"
+  default     = "test123"
+}
 
-variable "client_secret" {}
+variable "client_secret" {
+  description = "kubernetes internal service cidr range"
+  default     = "password"
+}
 
 variable "node_count" {
   description = "number of nodes to deploy"
