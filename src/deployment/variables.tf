@@ -1,7 +1,9 @@
 variable "client_id" {}
 
 variable "client_secret" {}
-
+tag_name = "dev4"
+modeofdeployment = "Auto"
+createdby = "Terraform"
 variable "node_count" {
   description = "number of nodes to deploy"
   default     = 2
