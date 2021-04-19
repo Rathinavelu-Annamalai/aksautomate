@@ -11,7 +11,7 @@ resource "azurerm_subnet" "aks_subnet" {
   virtual_network_name = azurerm_virtual_network.aks_vnet.name
   address_prefix       = var.subnet_cidr
   service_endpoints    = ["Microsoft.Sql", "Microsoft.Storage", "Microsoft.KeyVault"]
-  tags = var.tags
+ 
 }
 
 
