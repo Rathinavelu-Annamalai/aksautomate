@@ -1,11 +1,11 @@
 variable "client_id" {
   description = "kubernetes internal service cidr range"
-  default     = "test123"
+  //default     = "test123"
 }
 
 variable "client_secret" {
   description = "kubernetes internal service cidr range"
-  default     = "password"
+  //default     = "password"
 }
 
 variable "node_count" {
