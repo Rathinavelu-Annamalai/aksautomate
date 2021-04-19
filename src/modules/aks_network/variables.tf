@@ -24,3 +24,12 @@ variable "location" {
 variable "address_space" {
   description = "Network address space"
 }
+
+variable "tags" {
+type = map
+default = {
+  environment = "dev-demo"
+  CreatedBy = "terraform"
+  ModeOfDeployment = "Automation"
+}
+}
