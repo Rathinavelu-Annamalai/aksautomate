@@ -1,9 +1,7 @@
 variable "client_id" {}
 
 variable "client_secret" {}
-tag_name = "dev4"
-modeofdeployment = "Auto"
-createdby = "Terraform"
+
 variable "node_count" {
   description = "number of nodes to deploy"
   default     = 2
@@ -90,7 +88,13 @@ variable "max_count" {
   default     = 2
   description = "Maximum Node Count"
 }
-
+variable "tags" {
+type = map
+default = {
+  environment = "dev-demo"
+  CreatedBy = "terraform"
+  ModeOfDeployment = "Automation"
+}
 
 
 
