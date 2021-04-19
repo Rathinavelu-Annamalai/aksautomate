@@ -3,6 +3,7 @@ resource "azurerm_virtual_network" "aks_vnet" {
   address_space       = [var.address_space]
   resource_group_name = var.resource_group_name
   location            = var.location
+  tags = var.tags
 }
 resource "azurerm_subnet" "aks_subnet" {
   name                 = var.subnet_name
@@ -10,6 +11,7 @@ resource "azurerm_subnet" "aks_subnet" {
   virtual_network_name = azurerm_virtual_network.aks_vnet.name
   address_prefix       = var.subnet_cidr
   service_endpoints    = ["Microsoft.Sql", "Microsoft.Storage", "Microsoft.KeyVault"]
+  tags = var.tags
 }
 
 
