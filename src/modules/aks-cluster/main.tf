@@ -35,10 +35,6 @@ resource "azurerm_kubernetes_cluster" "cluster" {
   }
 
 
- tags = {
-        Environment = "Development"
-    }
-
   lifecycle {
     prevent_destroy = true
   }
