@@ -69,11 +69,11 @@ variable "service_cidr" {
 variable "diagnostics_workspace_id" {
   description = "log analytics workspace id for cluster audit"
 }
-variable "CLIENT_ID" {
+variable "client_id" {
 description = "kubernetes internal service cidr range"
   //default     = "5ff022ff-73b4-464c-87b2-57f8ddced9d8"
 }
-variable "CLIENT_SECRET" {
+variable "client_secret" {
 description = "kubernetes internal service cidr range"
  // default     = "password"
 }
