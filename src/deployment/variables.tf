@@ -5,7 +5,7 @@ variable "client_id" {
 
 variable "client_secret" {
   description = "kubernetes client secret"
- // default     = "password"
+  default     = "test123"
 }
 
 variable "node_count" {
