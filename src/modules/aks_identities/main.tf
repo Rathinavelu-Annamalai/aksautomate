@@ -20,7 +20,7 @@ resource "random_string" "cluster_sp_password" {
     service_principal = azuread_service_principal.cluster_sp.id
   }
 }*/
-resource "azurerm_azuread_service_principal_password" "cluster_sp_password" {
+resource "azuread_service_principal_password" "cluster_sp_password" {
   service_principal_id = "${azuread_service_principal.cluster_sp.id}"
   value                = "test123"
   end_date             = "2021-12-12T01:02:03Z" 
