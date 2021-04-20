@@ -1,9 +1,9 @@
-variable "CLIENT_ID" {
+variable "client_id" {
   description = "kubernetes client id"
   //default     = "5ff022ff-73b4-464c-87b2-57f8ddced9d8"
 }
 
-variable "CLIENT_SECRET" {
+variable "client_secret" {
   description = "kubernetes client secret"
  // default     = "password"
 }
