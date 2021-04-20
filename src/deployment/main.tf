@@ -29,7 +29,7 @@ resource "azurerm_user_assigned_identity" "aksIdentity" {
   resource_group_name = azurerm_resource_group.aks.name
   location            = azurerm_resource_group.aks.location
 
-  name = "dev4-runincloud"
+  name = "dev4-runincloud-identity"
 
  tags = {
     ModeOfDeployment = var.modeofdeployment
