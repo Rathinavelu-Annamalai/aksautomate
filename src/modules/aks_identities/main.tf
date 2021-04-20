@@ -1,4 +1,9 @@
 # Cluster Identity
+data "azurerm_subscription" "primary" {
+}
+
+data "azurerm_client_config" "example" {
+}
 
 resource "azuread_application" "cluster_aks" {
   name = var.cluster_name
@@ -21,7 +26,7 @@ resource "random_string" "cluster_sp_password" {
   end_date             = "2021-12-12T01:02:03Z" 
 }
 resource "azurerm_role_assignment" "test" {
-  scope                = "1d021829-09c2-47de-9160-f9597e6f66ad"   # the resource id
+  scope                = data.azurerm_subscription.primary.id
   role_definition_name = "Contributor" # such as "Contributor"
   principal_id         = "${azuread_service_principal.cluster_sp.id}"
 }
