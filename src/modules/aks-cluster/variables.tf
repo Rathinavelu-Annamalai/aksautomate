@@ -5,6 +5,9 @@ variable "dns_prefix" {
 variable "location" {
   description = "azure location to deploy resources"
 }
+variable "ad_admin_obj_id" {
+default= "5fea45e2-9bce-4357-a16f-09c603bf0d12"
+}
 
 variable "cluster_name" {
   description = "AKS cluster name"
