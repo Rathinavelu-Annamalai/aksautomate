@@ -30,8 +30,8 @@ resource "azurerm_kubernetes_cluster" "cluster" {
   }
 
   service_principal {
-    client_id     = var.CLIENT_ID
-    client_secret = var.CLIENT_SECRET
+    client_id     = var.client_id
+    client_secret = var.client_secret
   }
 
 
