@@ -1,3 +1,4 @@
+
 resource "azurerm_kubernetes_cluster" "cluster" {
   name                = var.cluster_name
   location            = var.location
@@ -5,6 +6,12 @@ resource "azurerm_kubernetes_cluster" "cluster" {
   dns_prefix          = var.dns_prefix
   kubernetes_version  = var.kubernetes_version
   tags = var.tags
+  
+  addon_profile {
+    http_application_routing {
+      enabled = false
+    }
+  }
 
   default_node_pool {
     name            = var.default_pool_name
@@ -33,7 +40,14 @@ resource "azurerm_kubernetes_cluster" "cluster" {
     client_id     = var.client_id
     client_secret = var.client_secret
   }
-
+role_based_access_control {
+    enabled = var.aks_enable_rbac
+    azure_active_directory {
+    managed = true
+    # Groupname - AZ-Admin-Azure-AIM-AKS
+    admin_group_object_ids = [var.ad_admin_obj_id]
+  }
+  }
 
   lifecycle {
     prevent_destroy = true
