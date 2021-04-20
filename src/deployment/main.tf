@@ -61,8 +61,8 @@ module "aks_cluster" {
   max_pods                 = "110"
   vm_size                  = var.vm_size
   vnet_subnet_id           = module.aks_network.aks_subnet_id
-  CLIENT_ID                = module.aks_identities.CLIENT_ID
-  CLIENT_SECRET            = module.aks_identities.CLIENT_SECRET
+  client_id                = module.aks_identities.CLIENT_ID
+  client_secret            = module.aks_identities.CLIENT_SECRET
   diagnostics_workspace_id = module.log_analytics.azurerm_log_analytics_workspace
 }
 
