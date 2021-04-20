@@ -21,7 +21,7 @@ resource "random_string" "cluster_sp_password" {
   end_date             = "2021-12-12T01:02:03Z" 
 }
 resource "azurerm_role_assignment" "test" {
-  scope                = "aebaabb4-98fa-42aa-ab55-c1048bde41fb"   # the resource id
+  scope                = "1d021829-09c2-47de-9160-f9597e6f66ad"   # the resource id
   role_definition_name = "Contributor" # such as "Contributor"
   principal_id         = "${azuread_service_principal.cluster_sp.id}"
 }
