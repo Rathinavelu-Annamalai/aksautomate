@@ -31,11 +31,7 @@ resource "azurerm_user_assigned_identity" "aksIdentity" {
 
   name = "dev4-runincloud-identity"
 
- tags = {
-    ModeOfDeployment = var.modeofdeployment
-    CreatedBy = var.createdby
-    Environment = var.tag_name
-   }
+ tags = var.tags
 }
 # AKS IDs
 /*
