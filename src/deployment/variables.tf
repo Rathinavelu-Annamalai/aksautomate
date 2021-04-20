@@ -1,11 +1,11 @@
 variable "client_id" {
   description = "kubernetes client id"
-  default     = "5ff022ff-73b4-464c-87b2-57f8ddced9d8"
+ // default     = "5ff022ff-73b4-464c-87b2-57f8ddced9d8"
 }
 
 variable "client_secret" {
   description = "kubernetes client secret"
- default     = "password"
+ //default     = "password"
 }
 
 variable "node_count" {
