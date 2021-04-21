@@ -19,6 +19,7 @@ variable "subnet_cidr" {
 
 variable "location" {
   description = "the cluster location"
+  default     = "Central Us"
 }
 
 variable "address_space" {
