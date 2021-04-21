@@ -17,6 +17,7 @@ variable "resource_group_name" {
 
 variable "kubernetes_version" {
   description = "version of the kubernetes cluster"
+  default     = "1.19.6"
 }
 
 variable "api_server_authorized_ip_ranges" {
