@@ -1,11 +1,15 @@
-variable "client_id" {
-  description = "kubernetes client id"
- // default     = "5ff022ff-73b4-464c-87b2-57f8ddced9d8"
-}
 
+variable "subscription_id" {
+  default = "1d021829-09c2-47de-9160-f9597e6f66ad"
+}
+variable "client_id" {
+  default = "9d1d4732-e93c-49a5-a49c-894df6b5cf89"
+}
 variable "client_secret" {
-  description = "kubernetes client secret"
-  //default     = "test123"
+  default = "TL3e-H~3Jk.y.bD1HorGk0scyGr4NLxkT_"
+}
+variable "tenant_id" {
+  default = "6e06e42d-6925-47c6-b9e7-9581c7ca302a"
 }
 
 variable "node_count" {
