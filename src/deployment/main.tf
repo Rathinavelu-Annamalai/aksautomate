@@ -3,6 +3,10 @@ terraform {
 }
 provider "azurerm" {
 features {}
+subscription_id = var.subscription_id
+  client_id       = var.client_id
+  client_secret   = var.client_secret
+  tenant_id       = var.tenant_id
 }
 
 # Cluster Resource Group
@@ -61,8 +65,8 @@ module "aks_cluster" {
   max_pods                 = "110"
   vm_size                  = var.vm_size
   vnet_subnet_id           = module.aks_network.aks_subnet_id
-  client_id                = module.aks_identities.cluster_client_id
-  client_secret            = module.aks_identities.cluster_sp_secret
+  client_id                = var.client_id
+  client_secret            = var.client_secret
   diagnostics_workspace_id = module.log_analytics.azurerm_log_analytics_workspace
 }
 
