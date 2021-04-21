@@ -41,7 +41,7 @@ resource "azurerm_kubernetes_cluster" "cluster" {
 }
 
 resource "azurerm_monitor_diagnostic_setting" "aks_cluster" {
-  name                       = "${azurerm_kubernetes_cluster.cluster.name}-audit"
+  name                       = "${azurerm_kubernetes_cluster.cluster.name}-audit21"
   target_resource_id         = azurerm_kubernetes_cluster.cluster.id
   log_analytics_workspace_id = var.diagnostics_workspace_id
   
