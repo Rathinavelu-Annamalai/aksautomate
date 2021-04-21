@@ -57,7 +57,7 @@ module "aks_cluster" {
   location                 = var.location
   dns_prefix               = var.dns_prefix
   resource_group_name      = azurerm_resource_group.aks.name
-  kubernetes_version       = var.kubernetes_version
+  //kubernetes_version       = var.kubernetes_version
   node_count               = var.node_count
   min_count                = var.min_count
   max_count                = var.max_count
