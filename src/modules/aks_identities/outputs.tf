@@ -7,5 +7,6 @@ output "cluster_client_id" {
 output "cluster_sp_secret" {
   sensitive = true
   //value     = "test123"
+  value     = random_string.cluster_sp_password.result
 }
 
