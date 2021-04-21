@@ -4,6 +4,7 @@ variable "dns_prefix" {
 
 variable "location" {
   description = "azure location to deploy resources"
+  default     = "Central Us"
 }
 
 variable "cluster_name" {
