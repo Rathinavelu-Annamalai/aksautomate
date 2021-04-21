@@ -24,12 +24,12 @@ variable "dns_prefix" {
 
 variable cluster_name {
   description = "AKS cluster name"
-  default     = "dev4-runItOnCloud"
+  default     = "dev4-runItOnCloud21"
 }
 
 variable resource_group_name {
   description = "name of the resource group to deploy AKS cluster in"
-  default     = "dev4-runitoncloud"
+  default     = "dev4-runitoncloud21"
 }
 
 variable location {
@@ -38,7 +38,7 @@ variable location {
 }
 
 variable log_analytics_workspace_name {
-  default = "dev4-LogAnalyticsWorkspaceName"
+  default = "dev4-LogAnalyticsWorkspaceName21"
 }
 
 # refer https://azure.microsoft.com/global-infrastructure/services/?products=monitor for log analytics available regions
@@ -53,12 +53,12 @@ variable log_analytics_workspace_sku {
 
 variable subnet_name {
   description = "subnet id where the nodes will be deployed"
-  default     = "dev4-runitoncloud-subnet"
+  default     = "dev4-runitoncloud-subnet21"
 }
 
 variable vnet_name {
   description = "vnet id where the nodes will be deployed"
-  default     = "dev4-runitoncloud-vnet"
+  default     = "dev4-runitoncloud-vnet21"
 }
 
 variable subnet_cidr {
