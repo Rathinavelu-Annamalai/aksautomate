@@ -16,7 +16,13 @@ resource "azurerm_resource_group" "aks" {
   location = var.location
   tags = var.tags
 }
-
+resource "azurerm_container_registry" "acr" {
+  name                = "ACR021"
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  admin_enabled       = false
+  sku                 = "Premium"
+}
 # AKS Cluster Network
 
 module "aks_network" {
