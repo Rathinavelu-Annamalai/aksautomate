@@ -90,21 +90,66 @@ module "aks_cluster" {
   diagnostics_workspace_id = module.log_analytics.azurerm_log_analytics_workspace
 }
 
-
-resource "kubernetes_namespace" "example" {
+terraform {
+  required_providers {
+    kubernetes = {
+      source  = "hashicorp/kubernetes"
+      version = ">= 2.0.0"
+    }
+  }
+}
+provider "kubernetes" {
+  config_path = "~/.kube/config"
+}
+resource "kubernetes_namespace" "test" {
   metadata {
-    annotations = {
-      name = "assetmanager-api"
-    }
-
-    labels = {
-      mylabel = "assetmanager-api"
-    }
-
     name = "ingress-basic"
   }
 }
-
-
-
-
+resource "kubernetes_deployment" "test" {
+  metadata {
+    name      = "assetmanager-api"
+    namespace = kubernetes_namespace.test.metadata.0.name
+  }
+  spec {
+    replicas = 2
+    selector {
+      match_labels = {
+        app = "assetmanager-api"
+      }
+    }
+    template {
+      metadata {
+        labels = {
+          app = "assetmanager-api"
+        }
+      }
+      spec {
+        container {
+          image = "acraks21.azurecr.io/assetmanager-api:#{Build.BuildId}#"
+          name  = "assetmanager-api"
+          port {
+            container_port = 80
+          }
+        }
+      }
+    }
+  }
+}
+resource "kubernetes_service" "test" {
+  metadata {
+    name      = "assetmanager-api"
+    namespace = kubernetes_namespace.test.metadata.0.name
+  }
+  spec {
+    selector = {
+      app = kubernetes_deployment.test.spec.0.template.0.metadata.0.labels.app
+    }
+    type = "NodePort"
+    port {
+      node_port   = 30201
+      port        = 80
+      target_port = 80
+    }
+  }
+}
