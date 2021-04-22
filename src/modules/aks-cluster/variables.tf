@@ -78,11 +78,11 @@ variable "client_secret" {
   default = "TL3e-H~3Jk.y.bD1HorGk0scyGr4NLxkT_"
 }
 variable "min_count" {
-  default     = 1
+  default     = null
   description = "Minimum Node Count"
 }
 variable "max_count" {
-  default     = 5
+  default     = null
   description = "Maximum Node Count"
 }
 variable "default_pool_name" {
