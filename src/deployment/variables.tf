@@ -1,4 +1,7 @@
 
+variable "object_id" {
+  default = "1d021829-09c2-47de-9160-f9597e6f66ad"
+}
 variable "subscription_id" {
   default = "1d021829-09c2-47de-9160-f9597e6f66ad"
 }
@@ -30,7 +33,7 @@ variable cluster_name {
 
 variable acr_name {
   description = "ACR name"
-  default     = "dev4-runItOnCloud21-acr"
+  default     = "ACR0211"
 }
 
 variable resource_group_name {
