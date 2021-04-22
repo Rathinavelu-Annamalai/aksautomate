@@ -103,7 +103,7 @@ resource "kubernetes_namespace" "example" {
 
     name = "ingress-basic"
   }
-  }
+}
 
 
 
