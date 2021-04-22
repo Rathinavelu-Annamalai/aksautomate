@@ -32,13 +32,13 @@ resource "azurerm_container_registry" "acr" {
 data "azuread_service_principal" "aks_principal" {
   application_id = var.client_id
 }*/
-resource "azurerm_role_assignment" "acrpull_role" {
+/*resource "azurerm_role_assignment" "acrpull_role" {
   scope                            = azurerm_container_registry.acr.id
   role_definition_name             = "AcrPull"
   principal_id                     = var.client_id
   skip_service_principal_aad_check = true
 }
-
+*/
 module "aks_network" {
   source              = "../modules/aks_network"
   subnet_name         = var.subnet_name
