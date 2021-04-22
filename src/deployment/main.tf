@@ -25,17 +25,17 @@ resource "azurerm_container_registry" "acr" {
 }
 # AKS Cluster Network
 
-provider "azuread" {
+/*provider "azuread" {
   version = "~>0.7"
 }
 
 data "azuread_service_principal" "aks_principal" {
   application_id = var.client_id
-}
+}*/
 resource "azurerm_role_assignment" "acrpull_role" {
   scope                            = azurerm_container_registry.acr.id
   role_definition_name             = "AcrPull"
-  principal_id                     = data.azuread_service_principal.aks_principal.id
+  principal_id                     = var.object_id
   skip_service_principal_aad_check = true
 }
 
