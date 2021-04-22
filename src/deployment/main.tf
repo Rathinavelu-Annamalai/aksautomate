@@ -91,20 +91,4 @@ module "aks_cluster" {
 }
 
 
-resource "kubernetes_namespace" "example" {
-  metadata {
-    annotations = {
-      name = "assetmanager-api"
-    }
-
-    labels = {
-      mylabel = "assetmanager-api"
-    }
-
-    name = "ingress-basic"
-  }
-}
-
-
-
 
