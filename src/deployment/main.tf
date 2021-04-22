@@ -17,13 +17,27 @@ resource "azurerm_resource_group" "aks" {
   tags = var.tags
 }
 resource "azurerm_container_registry" "acr" {
-  name                = "ACR021"
+  name                = var.acr_name
   resource_group_name = var.resource_group_name
   location            = var.location
   admin_enabled       = false
   sku                 = "Premium"
 }
 # AKS Cluster Network
+
+provider "azuread" {
+  version = "~>0.7"
+}
+
+data "azuread_service_principal" "aks_principal" {
+  application_id = var.client_id
+}
+resource "azurerm_role_assignment" "acrpull_role" {
+  scope                            = azurerm_container_registry.acr.id
+  role_definition_name             = "AcrPull"
+  principal_id                     = data.azuread_service_principal.aks_principal.id
+  skip_service_principal_aad_check = true
+}
 
 module "aks_network" {
   source              = "../modules/aks_network"
@@ -75,7 +89,6 @@ module "aks_cluster" {
   client_secret            = var.client_secret
   diagnostics_workspace_id = module.log_analytics.azurerm_log_analytics_workspace
 }
-
 
 
 
