@@ -15,7 +15,7 @@ resource "azurerm_kubernetes_cluster" "cluster" {
     max_pods        = var.max_pods
     type            = var.default_pool_type
 
-    enable_auto_scaling = true
+    enable_auto_scaling = false
     min_count           = var.min_count
     max_count           = var.max_count
   }
