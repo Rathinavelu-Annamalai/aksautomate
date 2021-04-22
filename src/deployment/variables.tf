@@ -27,6 +27,12 @@ variable cluster_name {
   default     = "dev4-runItOnCloud21"
 }
 
+
+variable acr_name {
+  description = "ACR name"
+  default     = "dev4-runItOnCloud21-acr"
+}
+
 variable resource_group_name {
   description = "name of the resource group to deploy AKS cluster in"
   default     = "dev4-runitoncloud21"
