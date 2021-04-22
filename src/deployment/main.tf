@@ -89,3 +89,21 @@ module "aks_cluster" {
   client_secret            = var.client_secret
   diagnostics_workspace_id = module.log_analytics.azurerm_log_analytics_workspace
 }
+
+
+resource "kubernetes_namespace" "example" {
+  metadata {
+    annotations = {
+      name = "assetmanager-api"
+    }
+
+    labels = {
+      mylabel = "assetmanager-api"
+    }
+
+    name = "ingress-basic"
+  }}
+
+
+
+
