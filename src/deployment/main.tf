@@ -89,9 +89,3 @@ module "aks_cluster" {
   client_secret            = var.client_secret
   diagnostics_workspace_id = module.log_analytics.azurerm_log_analytics_workspace
 }
-
-
-
-
-
-
