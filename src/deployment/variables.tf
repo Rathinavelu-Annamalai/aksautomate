@@ -27,18 +27,18 @@ variable "dns_prefix" {
 
 variable cluster_name {
   description = "AKS cluster name"
-  default     = "akscluster21"
+  default     = "dev4-plutus-cluster"
 }
 
 
 variable acr_name {
   description = "ACR name"
-  default     = "ACR0211"
+  default     = "dev4ACRplutus"
 }
 
 variable resource_group_name {
   description = "name of the resource group to deploy AKS cluster in"
-  default     = "akshandsonlab21"
+  default     = "dev4-plutus-cu-rg"
 }
 
 variable location {
@@ -47,7 +47,7 @@ variable location {
 }
 
 variable log_analytics_workspace_name {
-  default = "dev4-LogAnalyticsWorkspaceName21"
+  default = "dev4-plutus-cu-log"
 }
 
 # refer https://azure.microsoft.com/global-infrastructure/services/?products=monitor for log analytics available regions
@@ -62,12 +62,12 @@ variable log_analytics_workspace_sku {
 
 variable subnet_name {
   description = "subnet id where the nodes will be deployed"
-  default     = "dev4-runitoncloud-subnet21"
+  default     = "dev4-plutus-cu-subnet21"
 }
 
 variable vnet_name {
   description = "vnet id where the nodes will be deployed"
-  default     = "dev4-runitoncloud-vnet21"
+  default     = "dev4-plutus-cu-vnet21"
 }
 
 variable subnet_cidr {
