@@ -27,7 +27,7 @@ variable "dns_prefix" {
 
 variable cluster_name {
   description = "AKS cluster name"
-  default     = "dev4-runItOnCloud21"
+  default     = "akscluster21"
 }
 
 
@@ -38,7 +38,7 @@ variable acr_name {
 
 variable resource_group_name {
   description = "name of the resource group to deploy AKS cluster in"
-  default     = "dev4-runitoncloud21"
+  default     = "akshandsonlab21"
 }
 
 variable location {
