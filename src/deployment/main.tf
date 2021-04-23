@@ -89,11 +89,3 @@ module "aks_cluster" {
   client_secret            = var.client_secret
   diagnostics_workspace_id = module.log_analytics.azurerm_log_analytics_workspace
 }
-provider "kubernetes" {
-  config_path = "~/.kube/config"
-}
-resource "kubernetes_namespace" "test" {
-  metadata {
-    name = "ingress-basic"
-  }
-}
