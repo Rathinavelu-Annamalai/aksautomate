@@ -39,7 +39,7 @@ resource "azurerm_kubernetes_cluster" "cluster" {
     prevent_destroy = false
   }
 }
-
+/*
 resource "azurerm_monitor_diagnostic_setting" "aks_cluster" {
   name                       = "${azurerm_kubernetes_cluster.cluster.name}-audit219"
   target_resource_id         = azurerm_kubernetes_cluster.cluster.id
@@ -99,6 +99,4 @@ resource "azurerm_monitor_diagnostic_setting" "aks_cluster" {
     }
   }
 }
-
-
-
+*/
