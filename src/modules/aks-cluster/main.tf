@@ -15,7 +15,7 @@ resource "azurerm_kubernetes_cluster" "cluster" {
     max_pods        = var.max_pods
     type            = var.default_pool_type
 
-    enable_auto_scaling = false
+    enable_auto_scaling = true
     min_count           = var.min_count
     max_count           = var.max_count
   }
@@ -39,9 +39,9 @@ resource "azurerm_kubernetes_cluster" "cluster" {
     prevent_destroy = false
   }
 }
-/*
+
 resource "azurerm_monitor_diagnostic_setting" "aks_cluster" {
-  name                       = "${azurerm_kubernetes_cluster.cluster.name}-audit219"
+  name                       = "${azurerm_kubernetes_cluster.cluster.name}-audit23"
   target_resource_id         = azurerm_kubernetes_cluster.cluster.id
   log_analytics_workspace_id = var.diagnostics_workspace_id
   
@@ -99,4 +99,3 @@ resource "azurerm_monitor_diagnostic_setting" "aks_cluster" {
     }
   }
 }
-*/
