@@ -17,7 +17,7 @@ variable "tenant_id" {
 
 variable "node_count" {
   description = "number of nodes to deploy"
-  default     = 2
+  default     = 5
 }
 
 variable "dns_prefix" {
@@ -100,11 +100,11 @@ variable "address_space" {
   default     = "10.2.0.0/16"
 }
 variable "min_count" {
-  default     = null
+  default     = 4
   description = "Minimum Node Count"
 }
 variable "max_count" {
-  default     = null
+  default     = 4
   description = "Maximum Node Count"
 }
 variable "tags" {
